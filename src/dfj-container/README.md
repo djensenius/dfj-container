@@ -1,26 +1,20 @@
 
-# Hello, World! (hello)
+# DFJ Container (dfj-container)
 
-A hello world feature
+Install some of my commonly used utilities
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/devcontainers/feature-starter/hello:1": {
-        "version": "latest"
-    }
+    "ghcr.io/djensenius/dfj-container/dfj-container:0": {}
 }
 ```
 
-## Options
 
-| Options Id | Description | Type | Default Value |
-|-----|-----|-----|-----|
-| greeting | Select a pre-made greeting, or enter your own | string | hey |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/devcontainers/feature-starter/blob/main/src/hello/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/djensenius/dfj-container/blob/main/src/dfj-container/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
