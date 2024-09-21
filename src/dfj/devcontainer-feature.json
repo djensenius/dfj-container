@@ -2,6 +2,15 @@
     "name": "DFJ Container",
     "id": "dfj-container",
     "version": "0.9.0",
+    "dependsOn": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+      "ghcr.io/duduribeiro/devcontainer-features/tmux:1": {
+            "version": "latest"
+        },
+        "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
+            "version": "stable"
+        }
+    },
     "description": "Install some of my commonly used utilities",
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils",
