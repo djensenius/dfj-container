@@ -18,7 +18,7 @@ touch /etc/dfj_container
 
 su - $_CONTAINER_USER
 sudo apt-get update
-sudo apt-get install build-essential python3-virtualenv socat ncat ruby-dev jq thefuck tmux libfuse2 fuse software-properties-common most -y
+sudo apt-get install build-essential python3-venv python3-distutils socat ncat ruby-dev jq thefuck tmux libfuse2 fuse software-properties-common most -y
 curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
 curl -L https://github.com/dandavison/delta/releases/download/0.18.1/git-delta-musl_0.18.1_amd64.deb > ~/git-delta-musl_0.18.1_amd64.deb
 sudo dpkg -i ~/git-delta-musl_0.18.1_amd64.deb
@@ -39,4 +39,6 @@ npm install -g @fsouza/prettierd yaml-language-server vscode-langservers-extract
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
 sudo chsh -s /usr/bin/fish $_CONTAINER_USER

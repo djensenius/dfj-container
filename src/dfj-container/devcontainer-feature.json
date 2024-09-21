@@ -1,7 +1,7 @@
 {
     "name": "DFJ Container",
     "id": "dfj-container",
-    "version": "0.9.1",
+    "version": "0.9.2",
     "dependsOn": {
       "ghcr.io/devcontainers/features/docker-in-docker:2": {},
       "ghcr.io/devcontainers/features/common-utils":{},
