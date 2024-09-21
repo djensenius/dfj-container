@@ -1,5 +1,5 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
     "customizations": {
         "vscode": {
             "settings": {
@@ -11,17 +11,14 @@
                         "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
                     }
                 ]
-            }
+            },
+            "extensions": [
+                "mads-hartmann.bash-ide-vscode"
+            ]
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-        "ghcr.io/duduribeiro/devcontainer-features/tmux:1": {
-            "version": "latest"
-        },
-        "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
-            "version": "stable"
-        }
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
     "remoteUser": "node",
     "updateContentCommand": "npm install -g @devcontainers/cli"
