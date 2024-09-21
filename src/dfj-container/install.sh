@@ -3,9 +3,6 @@ set -e
 
 echo "Activating feature 'hello'"
 
-GREETING=${GREETING:-undefined}
-echo "The provided greeting is: $GREETING"
-
 # The 'install.sh' entrypoint script is always executed as the root user.
 #
 # These following environment variables are passed in by the dev container CLI.
@@ -19,8 +16,6 @@ echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
 su - $_CONTAINER_USER
-sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
 sudo apt -o DPkg::Lock::Timeout=600 install build-essential python3-venv socat ncat ruby-dev jq thefuck tmux libfuse2 fuse software-properties-common most -y
 sudo apt remove bat ripgrep -y
 curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
