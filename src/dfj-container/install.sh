@@ -18,7 +18,8 @@ touch /etc/dfj_container
 
 su - $_CONTAINER_USER
 sudo apt-get update
-sudo apt-get install build-essential python3-venv python3-distutils socat ncat ruby-dev jq thefuck tmux libfuse2 fuse software-properties-common most -y
+sudo apt-get install build-essential python3-virtualenv python3-dev python3-pip python3-setuptools socat ncat ruby-dev jq tmux libfuse2 fuse software-properties-common most -y
+pip3 install thefuck --user
 curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
 curl -L https://github.com/dandavison/delta/releases/download/0.18.1/git-delta-musl_0.18.1_amd64.deb > ~/git-delta-musl_0.18.1_amd64.deb
 sudo dpkg -i ~/git-delta-musl_0.18.1_amd64.deb
