@@ -21,11 +21,11 @@ sudo apt-get update
 sudo apt-get install build-essential python3-virtualenv python3-dev python3-pip python3-setuptools socat ncat ruby-dev jq tmux libfuse2 fuse software-properties-common most -y
 pip3 install thefuck --user --break-system-packages
 curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
-curl -L https://github.com/dandavison/delta/releases/download/0.18.1/git-delta-musl_0.18.1_amd64.deb > ~/git-delta-musl_0.18.1_amd64.deb
-sudo dpkg -i ~/git-delta-musl_0.18.1_amd64.deb
+curl -L https://github.com/dandavison/delta/releases/download/0.18.2/git-delta-musl_0.18.2_amd64.deb > ~/git-delta-musl_0.18.2_amd64.deb
+sudo dpkg -i ~/git-delta-musl_0.18.2_amd64.deb
 wget --output-document ~/.config/delta-themes.gitconfig https://raw.githubusercontent.com/dandavison/delta/master/themes.gitconfig
 PB_REL="https://github.com/protocolbuffers/protobuf/releases"
-curl -L $PB_REL/download/v25.1/protoc-25.1-linux-x86_64.zip > ~/protoc.zip
+curl -L $PB_REL/download/v25.6/protoc-25.6-linux-x86_64.zip > ~/protoc.zip
 unzip ~/protoc.zip -d $HOME/.local
 export PATH="$PATH:$HOME/.local/bin"
 cargo install eza
@@ -34,7 +34,7 @@ cargo install ripgrep
 cargo install fd-find
 cargo install bat --locked
 cargo install atuin
-go install github.com/arl/gitmux@latest
+# go install github.com/arl/gitmux@latest
 sudo gem install tmuxinator
 npm install -g @fsouza/prettierd yaml-language-server vscode-langservers-extracted eslint_d prettier tree-sitter neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
