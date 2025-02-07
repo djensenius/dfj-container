@@ -34,12 +34,12 @@ cargo install ripgrep
 cargo install fd-find
 cargo install bat --locked
 cargo install atuin
-# go install github.com/arl/gitmux@latest
+go install github.com/arl/gitmux@latest
 sudo gem install tmuxinator
 npm install -g @fsouza/prettierd yaml-language-server vscode-langservers-extracted eslint_d prettier tree-sitter neovim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 sudo chsh -s /usr/bin/fish $_CONTAINER_USER
