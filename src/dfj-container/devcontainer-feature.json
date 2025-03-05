@@ -1,7 +1,7 @@
 {
   "name": "DFJ Container",
   "id": "dfj-container",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "containerEnv": {
     "_CONTAINER_USER": "vscode"
   },

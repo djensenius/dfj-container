@@ -19,7 +19,6 @@ touch /etc/dfj_container
 su - $_CONTAINER_USER
 sudo apt-get update
 sudo apt-get install build-essential python3-virtualenv python3-dev python3-pip python3-setuptools socat ncat ruby-dev jq tmux libfuse2 fuse software-properties-common most -y
-pip3 install thefuck --user --break-system-packages
 curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
 curl -L https://github.com/dandavison/delta/releases/download/0.18.2/git-delta-musl_0.18.2_amd64.deb > ~/git-delta-musl_0.18.2_amd64.deb
 sudo dpkg -i ~/git-delta-musl_0.18.2_amd64.deb
@@ -28,16 +27,18 @@ PB_REL="https://github.com/protocolbuffers/protobuf/releases"
 curl -L $PB_REL/download/v25.6/protoc-25.6-linux-x86_64.zip > ~/protoc.zip
 unzip ~/protoc.zip -d $HOME/.local
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/opt/fzf/bin"
 cargo install eza
 cargo install zoxide --locked
 cargo install ripgrep
 cargo install fd-find
 cargo install bat --locked
 cargo install atuin
-sudo gem install tmuxinator
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --all
+sudo ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
+sudo mkdir -p /usr/local/opt/fzf
+sudo git clone --depth 1 https://github.com/junegunn/fzf.git /usr/local/opt/fzf
+sudo /usr/local/opt/fzf/install --all
 sudo chsh -s /usr/bin/fish $_CONTAINER_USER
