@@ -18,27 +18,33 @@ touch /etc/dfj_container
 
 su - $_CONTAINER_USER
 sudo apt-get update
-sudo apt-get install build-essential python3-virtualenv python3-dev python3-pip python3-setuptools socat ncat ruby-dev jq tmux libfuse2 fuse software-properties-common most -y
-curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
-curl -L https://github.com/dandavison/delta/releases/download/0.18.2/git-delta-musl_0.18.2_amd64.deb > ~/git-delta-musl_0.18.2_amd64.deb
-sudo dpkg -i ~/git-delta-musl_0.18.2_amd64.deb
-wget --output-document ~/.config/delta-themes.gitconfig https://raw.githubusercontent.com/dandavison/delta/master/themes.gitconfig
-PB_REL="https://github.com/protocolbuffers/protobuf/releases"
-curl -L $PB_REL/download/v25.6/protoc-25.6-linux-x86_64.zip > ~/protoc.zip
-unzip ~/protoc.zip -d $HOME/.local
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/opt/fzf/bin"
-cargo install eza
-cargo install zoxide --locked
-cargo install ripgrep
-cargo install fd-find
-cargo install bat --locked
-cargo install atuin
+sudo apt-get install -y \
+  jq \
+  build-essential \
+  unzip \
+  luarocks \
+  ncurses-bin \
+  pkg-config libevent-dev libncurses5-dev \
+  python3-virtualenv python3-dev python3-pip python3-setuptools
+
+# Install Ghostty terminfo
+curl -sL https://raw.githubusercontent.com/zcobol/xterm-ghostty/main/xterm-ghostty | tic -x -
+
+# Install tmux from source (latest)
+TMUX_VERSION=$(curl -s "https://api.github.com/repos/tmux/tmux/releases/latest" | grep -Po '"tag_name": *"\K[^"]*')
+curl -LO "https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz"
+tar -xzf "tmux-${TMUX_VERSION}.tar.gz"
+cd "tmux-${TMUX_VERSION}"
+./configure && make && sudo make install
+cd ..
+rm -rf "tmux-${TMUX_VERSION}" "tmux-${TMUX_VERSION}.tar.gz"
+
+# Install Neovim (latest)
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 sudo ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
-sudo mkdir -p /usr/local/opt/fzf
-sudo git clone --depth 1 https://github.com/junegunn/fzf.git /usr/local/opt/fzf
-sudo /usr/local/opt/fzf/install --all
-sudo chsh -s /usr/bin/fish $_CONTAINER_USER
+
+# Install mise (latest)
+curl https://mise.run | sh
+sudo ln -s ~/.local/bin/mise /usr/local/bin/mise
