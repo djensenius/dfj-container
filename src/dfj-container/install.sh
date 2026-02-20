@@ -28,7 +28,7 @@ sudo apt-get install -y \
   python3-virtualenv python3-dev python3-pip python3-setuptools
 
 # Install Ghostty terminfo
-curl -sL https://raw.githubusercontent.com/zcobol/xterm-ghostty/main/xterm-ghostty | tic -x -
+tic -x "$(dirname "$0")/xterm-ghostty.terminfo"
 
 # Install tmux from source (latest)
 TMUX_VERSION=$(curl -s "https://api.github.com/repos/tmux/tmux/releases/latest" | grep -Po '"tag_name": *"\K[^"]*')
