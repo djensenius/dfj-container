@@ -1,12 +1,14 @@
 {
   "name": "DFJ Container",
   "id": "dfj-container",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "containerEnv": {
     "_CONTAINER_USER": "vscode"
   },
   "dependsOn": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false
+    },
     "ghcr.io/devcontainers/features/common-utils":{},
     "ghcr.io/devcontainers/features/sshd:1":{},
     "ghcr.io/devcontainers/features/go:1":{},
