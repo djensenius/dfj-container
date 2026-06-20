@@ -21,6 +21,7 @@ sudo apt-get update
 sudo apt-get install -y \
   jq \
   build-essential \
+  fish \
   unzip \
   luarocks \
   ncurses-bin \
