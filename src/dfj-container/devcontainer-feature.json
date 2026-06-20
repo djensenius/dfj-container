@@ -1,7 +1,7 @@
 {
   "name": "DFJ Container",
   "id": "dfj-container",
-  "version": "0.9.11",
+  "version": "0.9.12",
   "containerEnv": {
     "_CONTAINER_USER": "vscode"
   },
@@ -16,7 +16,6 @@
     "ghcr.io/devcontainers/features/ruby:1":{},
     "ghcr.io/devcontainers/features/node:1":{},
     "ghcr.io/devcontainers-community/npm-features/typescript:1":{},
-    "ghcr.io/meaningful-ooo/devcontainer-features/fish:1":{},
     "ghcr.io/devcontainers/features/github-cli:1":{},
     "ghcr.io/devcontainers/features/copilot-cli:1":{}
   },
